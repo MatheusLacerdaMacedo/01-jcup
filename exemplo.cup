@@ -8,7 +8,7 @@ non terminal Integer expr;
 
 precedence left MAIS, MENOS;
 precedence left MULT, DIVI, REST;
-precedence left POT;
+precedence right POT;
 
 
 start with inicio;

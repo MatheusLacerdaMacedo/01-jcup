@@ -16,6 +16,10 @@ inteiro = {digito}+
 "+"       { return new Symbol(sym.MAIS); }
 "-"       { return new Symbol(sym.MENOS); }
 ";"       { return new Symbol(sym.PTVIRG); }
+"*"       { return new Symbol(sym.MULT); }
+"^"       { return new Symbol(sym.POT);}
+"%"       { return new Symbol(sym.REST);}
+"/"       { return new Symbol(sym.DIVI);}
 \n        { /* Ignora nova linha. */ }
 [ \t\r]+  { /* Ignora espaços. */ }
 .         { System.err.println("Caractere inválido: " + yytext()); return null; }

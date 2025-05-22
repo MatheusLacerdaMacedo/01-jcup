@@ -62,9 +62,10 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_CMAP_BLOCKS = zzUnpackcmap_blocks();
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
-    "\11\0\1\1\1\2\2\3\1\1\22\0\1\1\12\0"+
-    "\1\4\1\0\1\5\2\0\12\6\1\0\1\7\111\0"+
-    "\1\3\u01a2\0\2\3\326\0\u0100\3";
+    "\11\0\1\1\1\2\2\3\1\1\22\0\1\1\4\0"+
+    "\1\4\4\0\1\5\1\6\1\0\1\7\1\0\1\10"+
+    "\12\11\1\0\1\12\42\0\1\13\46\0\1\3\u01a2\0"+
+    "\2\3\326\0\u0100\3";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[1024];
@@ -91,10 +92,11 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7";
+    "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7"+
+    "\1\10\1\11\1\12\1\13";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[8];
+    int [] result = new int[12];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -119,10 +121,11 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\10\0\20\0\10\0\10\0\10\0\30\0\10";
+    "\0\0\0\14\0\30\0\14\0\14\0\14\0\14\0\14"+
+    "\0\14\0\44\0\14\0\14";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[8];
+    int [] result = new int[12];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -146,10 +149,11 @@ class Yylex implements java_cup.runtime.Scanner {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\4\1\0\1\5\1\6\1\7\1\10"+
-    "\11\0\1\3\14\0\1\7\1\0";
+    "\1\11\1\12\1\13\1\14\15\0\1\3\23\0\1\12"+
+    "\2\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[32];
+    int [] result = new int[48];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -192,10 +196,10 @@ class Yylex implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\1\1\3\11\1\1\1\11";
+    "\1\0\1\11\1\1\6\11\1\1\2\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[8];
+    int [] result = new int[12];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -626,38 +630,58 @@ class Yylex implements java_cup.runtime.Scanner {
             { System.err.println("Caractere inválido: " + yytext()); return null;
             }
             // fall through
-          case 8: break;
+          case 12: break;
           case 2:
             { /* Ignora espaços. */
             }
             // fall through
-          case 9: break;
+          case 13: break;
           case 3:
             { /* Ignora nova linha. */
             }
             // fall through
-          case 10: break;
+          case 14: break;
           case 4:
+            { return new Symbol(sym.REST);
+            }
+            // fall through
+          case 15: break;
+          case 5:
+            { return new Symbol(sym.MULT);
+            }
+            // fall through
+          case 16: break;
+          case 6:
             { return new Symbol(sym.MAIS);
             }
             // fall through
-          case 11: break;
-          case 5:
+          case 17: break;
+          case 7:
             { return new Symbol(sym.MENOS);
             }
             // fall through
-          case 12: break;
-          case 6:
+          case 18: break;
+          case 8:
+            { return new Symbol(sym.DIVI);
+            }
+            // fall through
+          case 19: break;
+          case 9:
             { Integer numero = Integer.valueOf(yytext());
             return new Symbol(sym.INTEIRO, yyline, yycolumn, numero);
             }
             // fall through
-          case 13: break;
-          case 7:
+          case 20: break;
+          case 10:
             { return new Symbol(sym.PTVIRG);
             }
             // fall through
-          case 14: break;
+          case 21: break;
+          case 11:
+            { return new Symbol(sym.POT);
+            }
+            // fall through
+          case 22: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
